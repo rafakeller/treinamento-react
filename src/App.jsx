@@ -1,22 +1,29 @@
 import { useState } from "react";
-import { Post } from "./Post.jsx";
+
+import { Post } from "./components/Post.jsx";
+import { Header } from "./components/Header.jsx";
+import { Sidebar } from "./components/Sidebar.jsx";
+
+import styles from "./App.module.css";
+import "./global.css";
 
 export function App() {
   const [count, setCount] = useState(0);
 
   return (
     <div>
-      <Post
-        author="Diego Santos"
-        content="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet unde, optio recusandae corrupti, doloremque commodi quibusdam dolor vitae sunt, laborum libero labore aut! Maxime est illum laboriosam, unde blanditiis at?"
-      />
-
-      <Post
-        author="Rafaela Kubert Santos"
-        content="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet unde, optio recusandae corrupti, doloremque commodi quibusdam dolor vitae sunt, laborum libero labore aut! Maxime est illum laboriosam, unde blanditiis at?"
-      />
+      <Header />
+      <div className={styles.wrapper}>
+        <Sidebar />
+        <main>
+          <Post />
+          
+        </main>
+      </div>
     </div>
   );
 }
 
-//JSX => JS + XML (Sintaxe do HTML)
+{
+  /* //JSX => JS + XML (Sintaxe do HTML) */
+}
